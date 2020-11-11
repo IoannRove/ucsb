@@ -1,4 +1,4 @@
-version: '3.3'
+version: '3.7'
 
 services:
   nginx:
@@ -10,7 +10,6 @@ services:
   web:
     build:
       context: ./
-      dockerfile: Dockerfile
     command: converter-api
     ports:
       - 8000:8000
