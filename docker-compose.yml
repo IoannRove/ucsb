@@ -11,8 +11,8 @@ services:
     build:
       context: ./
     command: converter-api
-    ports:
-      - 8000:8000
+    expose:
+      - 8000
     restart: on-failure:3
 
 
