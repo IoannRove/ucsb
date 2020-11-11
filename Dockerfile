@@ -4,4 +4,4 @@ WORKDIR /mnt/converter
 
 RUN pip install --upgrade pip
 COPY . .
-RUN pip install -e .
+RUN pip install .
