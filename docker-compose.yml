@@ -1,0 +1,22 @@
+version: '3.3'
+
+services:
+  nginx:
+    build: ./nginx
+    ports:
+      - 80:80
+    restart: on-failure:3
+
+  web:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    command: converter-api
+    ports:
+      - 8000:8000
+    restart: on-failure:3
+
+
+  redis:
+    image: redis:alpine
+    restart: on-failure:3
