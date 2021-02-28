@@ -13,6 +13,8 @@ async def setup_redis(app: Application):
     app['redis'] = redis
     try:
         yield
+    except asyncio.CancelledError:
+        pass
     finally:
         redis.close()
         await redis.wait_closed()
